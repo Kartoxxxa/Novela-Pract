@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vlad\\Source\\Repos\\Novela-Pract\\Pract_1\\Pract_1.csproj": {}
+    "C:\\Users\\Vlad\\source\\repos\\Novela-Pract\\Pract_1\\Pract_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vlad\\Source\\Repos\\Novela-Pract\\Pract_1\\Pract_1.csproj": {
+    "C:\\Users\\Vlad\\source\\repos\\Novela-Pract\\Pract_1\\Pract_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vlad\\Source\\Repos\\Novela-Pract\\Pract_1\\Pract_1.csproj",
+        "projectUniqueName": "C:\\Users\\Vlad\\source\\repos\\Novela-Pract\\Pract_1\\Pract_1.csproj",
         "projectName": "Pract_1",
-        "projectPath": "C:\\Users\\Vlad\\Source\\Repos\\Novela-Pract\\Pract_1\\Pract_1.csproj",
+        "projectPath": "C:\\Users\\Vlad\\source\\repos\\Novela-Pract\\Pract_1\\Pract_1.csproj",
         "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vlad\\Source\\Repos\\Novela-Pract\\Pract_1\\obj\\",
+        "outputPath": "C:\\Users\\Vlad\\source\\repos\\Novela-Pract\\Pract_1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
