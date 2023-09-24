@@ -72,6 +72,16 @@ namespace Pract_1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap YQDs {
+            get {
+                object obj = ResourceManager.GetObject("YQDs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Бандит {
             get {
                 object obj = ResourceManager.GetObject("Бандит", resourceCulture);
@@ -102,9 +112,9 @@ namespace Pract_1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ГГгрех {
+        internal static System.Drawing.Bitmap ГГ {
             get {
-                object obj = ResourceManager.GetObject("ГГгрех", resourceCulture);
+                object obj = ResourceManager.GetObject("ГГ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
