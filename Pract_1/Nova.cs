@@ -17,6 +17,7 @@ namespace Pract_1
         private int textPosition = 0;
         private System.Windows.Forms.Timer textAnimationTimer;
 
+ 
         public Nova()
         {
             InitializeComponent();
@@ -188,13 +189,13 @@ namespace Pract_1
         {
             if (story == 8)
             {
-                // В истории можно нажимать только кнопки 1,2,3
                 return;
             }
-            if (story == 17)
+            else if (story == 16)
             {
                 return;
             }
+            story++;
             NeGlavStory();
             textPosition = 0;
             text1.Text = "";
@@ -205,29 +206,61 @@ namespace Pract_1
         private void btn_Click(object sender, EventArgs e)
         {
 
-            btn1.Visible = false;
-            btn2.Visible = false;
-            btn3.Visible = false;
-
             Button clickButton = (Button)sender;
             if (clickButton.Name == "btn1")
             {
                 click = 1;
-                NeGlavStory();
-
             }
             else if (clickButton.Name == "btn2")
             {
                 click = 2;
-                NeGlavStory();
-
             }
             else if (clickButton.Name == "btn3")
             {
                 click = 3;
-                NeGlavStory();
-
             }
+            textPosition = 0;
+            text1.Text = "";
+            textAnimationTimer.Start();
+            NeGlavStory();
+            click = 0;
+        }
+
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            // Увеличиваем значение story
+            if (story == 8)
+            {
+                return;
+            }
+            else if (story == 16)
+            {
+                return;
+            }
+            story++;
+            textPosition = 0;
+            text1.Text = "";
+            textAnimationTimer.Start();
+            NeGlavStory();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            // Уменьшаем значение story
+            if (story == 8)
+            {
+                return;
+            }
+            else if (story == 16)
+            {
+                return;
+            }
+                story--;
+            textPosition = 0;
+            text1.Text = "";
+            textAnimationTimer.Start();
+            NeGlavStory();
         }
         #endregion
 
@@ -238,7 +271,7 @@ namespace Pract_1
 
             switch (story)
             {
-                case 0:
+                case 1:
                     textPerson.Visible = false;
                     textPerson.Font = new Font("Georgia", 22, FontStyle.Regular);
                     textPerson.TextAlign = ContentAlignment.MiddleCenter;
@@ -246,57 +279,62 @@ namespace Pract_1
                     text1.Font = new Font("Georgia", 14, FontStyle.Regular);
                     text1.ForeColor = Color.White;
                     text1.TextAlign = ContentAlignment.MiddleLeft;
-                    ImageBox.Size = new Size( 1500, 860);
-                    story += 1;
+                    ImageBox.Size = new Size(1500, 860);
                     break;
-                case 1:
+                case 2:
                     this.BackgroundImage = Properties.Resources.Заставка;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     text1.Image = Properties.Resources.Фон_текст;
-                    story += 1;
-                    break;
-                case 2:
-                    this.BackgroundImage = Properties.Resources.Лес_пустошь_и_завод_вдалеке;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
-                    story += 1;
                     break;
                 case 3:
-                    this.BackgroundImage = null;
-                    this.BackColor = Color.Black;
-                    story += 1;
+                    this.BackgroundImage = Properties.Resources.Лес_пустошь_и_завод_вдалеке;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
                     break;
                 case 4:
-                    this.BackgroundImage = Properties.Resources.Дом_1;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
-                    story += 1;
+                    this.BackgroundImage = null;
+                    this.BackColor = Color.Black;
                     break;
                 case 5:
-                    story += 1;
+                    this.BackgroundImage = Properties.Resources.Дом_1;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
                     break;
-                case 6:
+                case 6: 
                     ImageBox.Image = Properties.Resources.Сталкер_Учёный;
                     textPerson.ImageAlign = ContentAlignment.MiddleCenter;
-                    story += 1;
                     break;
                 case 7:
-                    textPerson.Visible = false;
+                    btn1.Visible = false;
+                    btn2.Visible = false;
+                    btn3.Visible = false;
+                    break;
+                case 8:
                     btn1.Visible = true;
                     btn2.Visible = true;
                     btn3.Visible = true;
-                    story += 1;
-                    break;
-                case 8:
+                    textPerson.Visible = false;
                     if (click == 1)
                     {
                         story = 101;
+                        NeGlavStory();
+                        btn1.Visible = false;
+                        btn2.Visible = false;
+                        btn3.Visible = false;
                     }
                     else if (click == 2)
                     {
                         story = 9;
+                        NeGlavStory();
+                        btn1.Visible = false;
+                        btn2.Visible = false;
+                        btn3.Visible = false;
                     }
                     else if (click == 3)
                     {
                         story = 201;
+                        NeGlavStory();
+                        btn1.Visible = false;
+                        btn2.Visible = false;
+                        btn3.Visible = false;
                     }
                     break;
                 case 9:
@@ -304,33 +342,30 @@ namespace Pract_1
                     textPerson.Visible = true;
                     textPerson.Image = Properties.Resources.Фон_текст_персонаж;
                     textPerson.Text = "Ваня";
-                    story += 1;
+
                     break;
                 case 10:
                     textPerson.Text = "Ты";
                     ImageBox.Image = Properties.Resources.ГГ;
-                    story += 1;
                     break;
                 case 11:
+                    this.BackgroundImage = Properties.Resources.Дом_1;
                     textPerson.Visible = false;
                     ImageBox.Image = null;
-                    story += 1;
                     break;
                 case 12:
                     this.BackgroundImage = Properties.Resources.Деревня_люди_костёр;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
-                    story += 1;
                     break;
+
                 case 101:
                     textPerson.Visible = true;
                     ImageBox.Image = Properties.Resources.Сталкер_Учёный;
-                    story = 102;
                     break;
                 case 102:
                     textPerson.Visible = false;
                     text1.Visible = true;
                     ImageBox.Image = null;
-                    story = 103;
                     break;
                 case 103:
                     story = 9;
@@ -338,99 +373,88 @@ namespace Pract_1
                     break;
                 case 201:
                     ImageBox.Image = null;
-                    story = 202;
                     break;
                 case 202:
                     story = 1000;
                     NeGlavStory();
                     break;
                 case 13:
-                    story += 1;
+                    textPerson.Visible = false;
+                    textPerson.Image = null;
+                    ImageBox.Image = null;
                     break;
                 case 14:
-                    story += 1;
+                    textPerson.Visible = false;
+                    textPerson.Image = null;
+                    ImageBox.Image = null;
                     break;
                 case 15:
                     textPerson.Visible = true;
                     textPerson.Image = Properties.Resources.Фон_текст_персонаж;
                     textPerson.Text = "Шрам";
                     ImageBox.Image = Properties.Resources.Персонаж_1;
-                    story += 1;
                     break;
+
                 case 16:
                     btn1.Visible = true;
                     btn2.Visible = true;
-                    story += 1;
-                    break;
-                case 17:
                     if (click == 1)
                     {
-                        story = 104;
+                        story = 19;
+                        btn1.Visible = false;
+                        btn2.Visible = false;
+                        NeGlavStory();
                     }
                     else if (click == 2)
                     {
-                        story = 105;
+                        story = 17;
+                        btn1.Visible = false;
+                        btn2.Visible = false;
+                        NeGlavStory();
                     }
+                    break;
 
-                    break;
-                case 104:
-                    story = 20;
-                    NeGlavStory();
-                    break;
-                case 105:
-                    story = 18;
-                    NeGlavStory();
-                    break;
-                case 18:
+                case 17:
                     textPerson.Text = "Тихон";
                     ImageBox.Image = Properties.Resources.Персонаж_2;
-                    story += 1;
                     break;
-                case 19:
+                case 18:
                     ImageBox.Image = null;
                     textPerson.Visible = false;
-                    story += 1;
                     break;
-                case 20:
+                case 19:
                     textPerson.Visible = true;
                     textPerson.Text = "Шрам";
                     ImageBox.Image = Properties.Resources.Персонаж_1;
-                    story += 1;
+                    break;
+                case 20:
+                    textPerson.Text = "Ты";
+                    ImageBox.Image = Properties.Resources.ГГ;
                     break;
                 case 21:
-                    textPerson.Text = "Ты";
-                    ImageBox.Image = Properties.Resources.ГГ;
-                    story += 1;
+                    textPerson.Text = "Шрам";
+                    ImageBox.Image = Properties.Resources.Персонаж_1;
                     break;
                 case 22:
-                    textPerson.Text = "Шрам";
-                    ImageBox.Image = Properties.Resources.Персонаж_1;
-                    story += 1;
-                    break;
-                case 23:
                     textPerson.Text = "Ты";
                     ImageBox.Image = Properties.Resources.ГГ;
-                    story += 1;
                     break;
-                case 24:
+                case 23:
                     textPerson.Text = "Шрам";
                     ImageBox.Image = Properties.Resources.Персонаж_1;
-                    story += 1;
                     break;
-                case 25:
+                case 24:
                     textPerson.Visible = false;
 
                     ImageBox.Image = null;
-                    story += 1;
                     break;
-                case 26:
+
+
+
+
+                case 25:
                     story = 0;
                     break;
-
-
-
-
-
                 case 1000:
                     this.BackgroundImage = null;
                     this.BackColor = Color.Black;
@@ -439,7 +463,6 @@ namespace Pract_1
                     text1.Font = new Font("Georgia", 48, FontStyle.Regular);
                     text1.ForeColor = Color.DarkRed;
                     text1.TextAlign = ContentAlignment.MiddleCenter;
-                    story = 1001;
                     break;
                 case 1001:
                     story = 0;

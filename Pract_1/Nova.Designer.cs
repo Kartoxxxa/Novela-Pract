@@ -36,8 +36,8 @@
             btn1 = new Button();
             btn2 = new Button();
             btn3 = new Button();
-            Next = new Button();
             Previous = new Button();
+            Next = new Button();
             textPerson = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)ImageBox).BeginInit();
@@ -79,8 +79,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.Controls.Add(text1, 1, 0);
             tableLayoutPanel1.Controls.Add(PanelButton, 0, 0);
-            tableLayoutPanel1.Controls.Add(Next, 0, 1);
-            tableLayoutPanel1.Controls.Add(Previous, 2, 1);
+            tableLayoutPanel1.Controls.Add(Previous, 0, 1);
+            tableLayoutPanel1.Controls.Add(Next, 2, 1);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Location = new Point(0, 656);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -144,23 +144,25 @@
             btn3.Visible = false;
             btn3.Click += btn_Click;
             // 
-            // Next
-            // 
-            Next.Location = new Point(3, 173);
-            Next.Name = "Next";
-            Next.Size = new Size(75, 23);
-            Next.TabIndex = 3;
-            Next.Text = "button1";
-            Next.UseVisualStyleBackColor = true;
-            // 
             // Previous
             // 
-            Previous.Location = new Point(909, 173);
+            Previous.Location = new Point(3, 173);
             Previous.Name = "Previous";
             Previous.Size = new Size(75, 23);
             Previous.TabIndex = 4;
             Previous.Text = "button2";
             Previous.UseVisualStyleBackColor = true;
+            Previous.Click += btnPrevious_Click;
+            // 
+            // Next
+            // 
+            Next.Location = new Point(909, 173);
+            Next.Name = "Next";
+            Next.Size = new Size(75, 23);
+            Next.TabIndex = 3;
+            Next.Text = "button1";
+            Next.UseVisualStyleBackColor = true;
+            Next.Click += btnNext_Click;
             // 
             // textPerson
             // 
