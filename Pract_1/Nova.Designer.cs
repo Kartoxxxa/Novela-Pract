@@ -65,7 +65,7 @@
             text1.Location = new Point(103, 0);
             text1.Name = "text1";
             text1.Padding = new Padding(30, 20, 30, 20);
-            text1.Size = new Size(800, 170);
+            text1.Size = new Size(800, 160);
             text1.TabIndex = 1;
             text1.TextAlign = ContentAlignment.MiddleCenter;
             text1.Click += ClickBox;
@@ -85,8 +85,8 @@
             tableLayoutPanel1.Location = new Point(0, 656);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 82.92683F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.0731716F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 78.04878F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 21.95122F));
             tableLayoutPanel1.Size = new Size(1008, 205);
             tableLayoutPanel1.TabIndex = 2;
             // 
@@ -98,7 +98,7 @@
             PanelButton.Controls.Add(btn3);
             PanelButton.Location = new Point(3, 3);
             PanelButton.Name = "PanelButton";
-            PanelButton.Size = new Size(94, 164);
+            PanelButton.Size = new Size(94, 154);
             PanelButton.TabIndex = 2;
             // 
             // btn1
@@ -146,22 +146,32 @@
             // 
             // Previous
             // 
-            Previous.Location = new Point(3, 173);
+            Previous.Dock = DockStyle.Fill;
+            Previous.FlatStyle = FlatStyle.Popup;
+            Previous.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            Previous.ForeColor = Color.White;
+            Previous.Location = new Point(3, 163);
             Previous.Name = "Previous";
-            Previous.Size = new Size(75, 23);
+            Previous.Size = new Size(94, 39);
             Previous.TabIndex = 4;
-            Previous.Text = "button2";
+            Previous.Text = "<";
             Previous.UseVisualStyleBackColor = true;
+            Previous.Visible = false;
             Previous.Click += btnPrevious_Click;
             // 
             // Next
             // 
-            Next.Location = new Point(909, 173);
+            Next.Dock = DockStyle.Fill;
+            Next.FlatStyle = FlatStyle.Popup;
+            Next.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            Next.ForeColor = Color.White;
+            Next.Location = new Point(909, 163);
             Next.Name = "Next";
-            Next.Size = new Size(75, 23);
+            Next.Size = new Size(96, 39);
             Next.TabIndex = 3;
-            Next.Text = "button1";
+            Next.Text = ">";
             Next.UseVisualStyleBackColor = true;
+            Next.Visible = false;
             Next.Click += btnNext_Click;
             // 
             // textPerson

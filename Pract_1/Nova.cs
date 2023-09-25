@@ -17,7 +17,7 @@ namespace Pract_1
         private int textPosition = 0;
         private System.Windows.Forms.Timer textAnimationTimer;
 
- 
+
         public Nova()
         {
             InitializeComponent();
@@ -248,15 +248,24 @@ namespace Pract_1
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             // Уменьшаем значение story
-            if (story == 8)
+            if (story == 1000)
             {
                 return;
             }
-            else if (story == 16)
+            else if (story == 201)
             {
                 return;
             }
-                story--;
+            else if (story == 101)
+            {
+                story = 9;
+            }
+            else if (story == 19)
+            {
+                story = 17;
+            }
+
+            story--;
             textPosition = 0;
             text1.Text = "";
             textAnimationTimer.Start();
@@ -272,6 +281,8 @@ namespace Pract_1
             switch (story)
             {
                 case 1:
+                    Next.Visible = true;
+                    Previous.Visible = true;
                     textPerson.Visible = false;
                     textPerson.Font = new Font("Georgia", 22, FontStyle.Regular);
                     textPerson.TextAlign = ContentAlignment.MiddleCenter;
@@ -298,7 +309,7 @@ namespace Pract_1
                     this.BackgroundImage = Properties.Resources.Дом_1;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     break;
-                case 6: 
+                case 6:
                     ImageBox.Image = Properties.Resources.Сталкер_Учёный;
                     textPerson.ImageAlign = ContentAlignment.MiddleCenter;
                     break;
