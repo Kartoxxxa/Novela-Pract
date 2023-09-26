@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ImageBox = new PictureBox();
             text1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             PanelButton = new FlowLayoutPanel();
@@ -40,21 +39,11 @@
             Next = new Button();
             textPerson = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)ImageBox).BeginInit();
+            ImageBox = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             PanelButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ImageBox).BeginInit();
             SuspendLayout();
-            // 
-            // ImageBox
-            // 
-            ImageBox.BackColor = Color.Transparent;
-            ImageBox.Location = new Point(0, -1);
-            ImageBox.Name = "ImageBox";
-            ImageBox.Size = new Size(1500, 860);
-            ImageBox.SizeMode = PictureBoxSizeMode.Zoom;
-            ImageBox.TabIndex = 0;
-            ImageBox.TabStop = false;
-            ImageBox.Click += ClickBox;
             // 
             // text1
             // 
@@ -178,11 +167,23 @@
             // 
             textPerson.BackColor = Color.Transparent;
             textPerson.ForeColor = Color.White;
-            textPerson.Location = new Point(113, 588);
+            textPerson.Location = new Point(616, 600);
             textPerson.Name = "textPerson";
             textPerson.Size = new Size(287, 53);
             textPerson.TabIndex = 3;
             textPerson.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // ImageBox
+            // 
+            ImageBox.BackColor = Color.Transparent;
+            ImageBox.Dock = DockStyle.Fill;
+            ImageBox.Location = new Point(0, 0);
+            ImageBox.Name = "ImageBox";
+            ImageBox.Size = new Size(1008, 861);
+            ImageBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ImageBox.TabIndex = 0;
+            ImageBox.TabStop = false;
+            ImageBox.Click += ClickBox;
             // 
             // Nova
             // 
@@ -195,15 +196,13 @@
             Controls.Add(ImageBox);
             Name = "Nova";
             Text = "Novela";
-            ((System.ComponentModel.ISupportInitialize)ImageBox).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             PanelButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ImageBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox ImageBox;
         private Label text1;
         private TableLayoutPanel tableLayoutPanel1;
         private Label textPerson;
@@ -214,5 +213,6 @@
         private FlowLayoutPanel PanelButton;
         private Button Next;
         private Button Previous;
+        private PictureBox ImageBox;
     }
 }
