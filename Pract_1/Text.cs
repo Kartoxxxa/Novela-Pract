@@ -12,29 +12,22 @@ namespace Pract_1
     {
         #region Аудио
 
-        //    private void PlayAudio(string audioFilePath)
-        //            {
-        //                try
-        //                {
-        //                     player.SoundLocation = audioFilePath;
-        //                     player.Load();
-        //                     player.Play();
-        //                }
-        //                     catch (Exception ex)
-        //                {
-        //                     MessageBox.Show("Помилка: " + ex.Message);
-        //               }
-        //            }
+        //private void PlayAudio(string audioFilePath)
+        //{
+        //    try
+        //    {
+        //        player.SoundLocation = audioFilePath;
+        //        player.Load();
+        //        player.Play();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Помилка: " + ex.Message);
+        //    }
+        //}
 
-        //    PlayAudio("C:\\Users\\Vlad\\source\\repos\\Pract_1\\Pract_1\\Resources\\Ivan1.wav");
+        //string audioFilePath = ".wav";
 
-        //                    if (isPlaying)
-        //                    {
-        //                        player.Stop();
-        //                    }
-
-        //PlayAudio("C:\\Users\\Vlad\\source\\repos\\Pract_1\\Pract_1\\Resources\\Диктор.wav");;
-        //                    isPlaying = true;
 
         #endregion
 

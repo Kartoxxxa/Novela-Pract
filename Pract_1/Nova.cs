@@ -29,7 +29,7 @@ namespace Pract_1
         }
         #endregion
 
-        //#region Story
+        #region Story
 
         //private void GlavStory()
         //{
@@ -181,7 +181,7 @@ namespace Pract_1
 
         //}
 
-        //#endregion
+        #endregion
 
         #region Button and Click
 
@@ -290,7 +290,7 @@ namespace Pract_1
                     text1.Font = new Font("Georgia", 14, FontStyle.Regular);
                     text1.ForeColor = Color.White;
                     text1.TextAlign = ContentAlignment.MiddleLeft;
-                    ImageBox.Size = new Size(1500, 860);
+                    ImageBox.SizeMode = PictureBoxSizeMode.Zoom;
                     break;
                 case 2:
                     this.BackgroundImage = Properties.Resources.Заставка;
@@ -353,7 +353,6 @@ namespace Pract_1
                     textPerson.Visible = true;
                     textPerson.Image = Properties.Resources.Фон_текст_персонаж;
                     textPerson.Text = "Ваня";
-
                     break;
                 case 10:
                     textPerson.Text = "Ты";
@@ -368,7 +367,6 @@ namespace Pract_1
                     this.BackgroundImage = Properties.Resources.Деревня_люди_костёр;
                     this.BackgroundImageLayout = ImageLayout.Stretch;
                     break;
-
                 case 101:
                     textPerson.Visible = true;
                     ImageBox.Image = Properties.Resources.Сталкер_Учёный;
@@ -404,8 +402,9 @@ namespace Pract_1
                     textPerson.Image = Properties.Resources.Фон_текст_персонаж;
                     textPerson.Text = "Шрам";
                     ImageBox.Image = Properties.Resources.Персонаж_1;
+                    btn1.Visible = false;
+                    btn2.Visible = false;
                     break;
-
                 case 16:
                     btn1.Visible = true;
                     btn2.Visible = true;
@@ -424,7 +423,6 @@ namespace Pract_1
                         NeGlavStory();
                     }
                     break;
-
                 case 17:
                     textPerson.Text = "Тихон";
                     ImageBox.Image = Properties.Resources.Персонаж_2;
@@ -456,21 +454,18 @@ namespace Pract_1
                     break;
                 case 24:
                     textPerson.Visible = false;
-
                     ImageBox.Image = null;
                     break;
-
-
-
-
                 case 25:
                     story = 0;
+
+
                     break;
                 case 1000:
                     this.BackgroundImage = null;
                     this.BackColor = Color.Black;
                     ImageBox.Image = Properties.Resources.YQDs;
-                    ImageBox.Size = new Size(1100, 600);
+                    ImageBox.SizeMode = PictureBoxSizeMode.CenterImage;
                     text1.Font = new Font("Georgia", 48, FontStyle.Regular);
                     text1.ForeColor = Color.DarkRed;
                     text1.TextAlign = ContentAlignment.MiddleCenter;
@@ -480,10 +475,7 @@ namespace Pract_1
                     ImageBox.Image = null;
                     NeGlavStory();
                     break;
-
-
             }
-
         }
 
         #endregion
