@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nova));
             text1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             PanelButton = new FlowLayoutPanel();
@@ -40,6 +41,7 @@
             textPerson = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ImageBox = new PictureBox();
+            GlobalMenu = new Components.Menu();
             tableLayoutPanel1.SuspendLayout();
             PanelButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ImageBox).BeginInit();
@@ -165,6 +167,7 @@
             // 
             // textPerson
             // 
+            textPerson.Anchor = AnchorStyles.Bottom;
             textPerson.BackColor = Color.Transparent;
             textPerson.ForeColor = Color.White;
             textPerson.Location = new Point(616, 600);
@@ -185,16 +188,28 @@
             ImageBox.TabStop = false;
             ImageBox.Click += ClickBox;
             // 
+            // GlobalMenu
+            // 
+            GlobalMenu.BackColor = Color.Transparent;
+            GlobalMenu.BackgroundImage = (Image)resources.GetObject("GlobalMenu.BackgroundImage");
+            GlobalMenu.BackgroundImageLayout = ImageLayout.Stretch;
+            GlobalMenu.Location = new Point(0, 0);
+            GlobalMenu.Name = "GlobalMenu";
+            GlobalMenu.Size = new Size(1008, 884);
+            GlobalMenu.TabIndex = 4;
+            // 
             // Nova
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1008, 861);
+            Controls.Add(GlobalMenu);
             Controls.Add(textPerson);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(ImageBox);
             Name = "Nova";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Novela";
             tableLayoutPanel1.ResumeLayout(false);
             PanelButton.ResumeLayout(false);
@@ -214,5 +229,6 @@
         private Button Next;
         private Button Previous;
         private PictureBox ImageBox;
+        private Components.Menu GlobalMenu;
     }
 }

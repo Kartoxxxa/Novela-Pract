@@ -10,6 +10,7 @@ namespace Pract_1
 
     public partial class Nova : Form
     {
+
         #region Аудио
 
         //private void PlayAudio(string audioFilePath)
@@ -33,32 +34,47 @@ namespace Pract_1
 
         #region Анимированый текст
 
-        private void AnimateText(string fullText)
+        private int currentCharIndex = 0;
+        private string animationText = "";
+
+        private void StartTextAnimation(string text)
+        {
+            currentCharIndex = 0;
+            animationText = text;
+            text1.Text = "";       // Очистка текстового поля перед началом анимации
+            AnimateText();   // Запуск
+        }
+
+        private async void AnimateText()
+        {
+            if (currentCharIndex < animationText.Length)
             {
-                if (textPosition < fullText.Length)
-                {
-                    text1.Text += fullText[textPosition];
-                    textPosition++;
-                }
-                else
-                {
-                    textAnimationTimer.Stop();
-                }
+                text1.Text += animationText[currentCharIndex]; // Добавка символа к текстовому полю
+                currentCharIndex++;                            // Увеличивание индекса символа для следующей итерации
+                await Task.Delay(40);                          // Интервал
+                AnimateText();                                  // Вызов для следующего символа
             }
+        }
 
-            private void TextAnimationTimer_Tick(object sender, EventArgs e)
+        private void TextAnimation(object sender, EventArgs e)
+        {                     
+            StartTextAnimation(GetTextForAnimation());  // Вызов метода StartTextAnimation с текстом для анимации
+        }
+
+        // Метод, который возвращает текст
+        private string GetTextForAnimation()
             {
-                AnimateText(GetTextForAnimation()); // Вызываем метод для получения текста
+
+            if (story == 1)
+            {
+                return "Нажмите клавижу мыши для продолжения...";
+
             }
-
-            // Метод, который возвращает текст
-            private string GetTextForAnimation()
-            {
-
-            if (story == 2)
+            else if (story == 2)
             {
                 return "Так выглядит наш мир после катастрофы...\n" +
                     "Понимаю у тебя много вопросов, но ты узнаешь обо всём позже.";
+
             }
             else if (story == 3)
             {
