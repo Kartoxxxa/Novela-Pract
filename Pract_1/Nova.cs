@@ -138,8 +138,6 @@ namespace Pract_1
 
 #endregion
 
-
-
         #region Story Swich
 
         private void NeGlavStory()
