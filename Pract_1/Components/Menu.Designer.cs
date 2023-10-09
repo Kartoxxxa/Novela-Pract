@@ -44,9 +44,11 @@
             // btn1
             // 
             btn1.BackColor = Color.Transparent;
-            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.FlatAppearance.BorderSize = 0;
+            btn1.FlatStyle = FlatStyle.Flat;
             btn1.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn1.ForeColor = Color.White;
+            btn1.Image = Properties.Resources.Фон_текст_персонаж;
             btn1.Location = new Point(540, 444);
             btn1.Margin = new Padding(3, 5, 3, 5);
             btn1.Name = "btn1";
@@ -61,9 +63,11 @@
             // btn2
             // 
             btn2.BackColor = Color.Transparent;
-            btn2.FlatStyle = FlatStyle.Popup;
+            btn2.FlatAppearance.BorderSize = 0;
+            btn2.FlatStyle = FlatStyle.Flat;
             btn2.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn2.ForeColor = Color.White;
+            btn2.Image = Properties.Resources.Фон_текст_персонаж;
             btn2.Location = new Point(540, 544);
             btn2.Margin = new Padding(3, 5, 3, 5);
             btn2.Name = "btn2";
@@ -78,9 +82,11 @@
             // btn3
             // 
             btn3.BackColor = Color.Transparent;
-            btn3.FlatStyle = FlatStyle.Popup;
+            btn3.FlatAppearance.BorderSize = 0;
+            btn3.FlatStyle = FlatStyle.Flat;
             btn3.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btn3.ForeColor = Color.White;
+            btn3.Image = Properties.Resources.Фон_текст_персонаж;
             btn3.Location = new Point(540, 644);
             btn3.Margin = new Padding(3, 5, 3, 5);
             btn3.Name = "btn3";
@@ -97,7 +103,7 @@
             title.BackColor = Color.Transparent;
             title.Font = new Font("Jokerman", 36F, FontStyle.Bold, GraphicsUnit.Point);
             title.ForeColor = Color.White;
-            title.Location = new Point(68, 169);
+            title.Location = new Point(68, 114);
             title.Name = "title";
             title.Size = new Size(639, 113);
             title.TabIndex = 4;
