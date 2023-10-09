@@ -33,3 +33,4 @@ C:\Users\Vlad\source\repos\Novela-Pract\Pract_1\obj\Debug\net6.0-windows\Pract_1
 C:\Users\Vlad\source\repos\Novela-Pract\Pract_1\obj\Debug\net6.0-windows\Pract_1.genruntimeconfig.cache
 C:\Users\Vlad\source\repos\Novela-Pract\Pract_1\obj\Debug\net6.0-windows\ref\Pract_1.dll
 C:\Users\Vlad\source\repos\Novela-Pract\Pract_1\obj\Debug\net6.0-windows\Pract_1.Components.Menu.resources
+C:\Users\Vlad\source\repos\Novela-Pract\Pract_1\obj\Debug\net6.0-windows\Pract_1.Zip.resources

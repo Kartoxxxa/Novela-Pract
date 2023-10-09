@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -11,24 +12,22 @@ namespace Pract_1
     public partial class Nova : Form
     {
 
-        #region Аудио
+        #region Music
+        public void MusicFromResource()
+        {
+            using (MemoryStream fileOut = new MemoryStream(Properties.Resources.Mass))
+            using (GZipStream gz = new GZipStream(fileOut, CompressionMode.Decompress))
+            {
+                soundPlayer.Stream = gz;
+                soundPlayer.Load();
+                soundPlayer.Play();
+            }
+        }
 
-        //private void PlayAudio(string audioFilePath)
-        //{
-        //    try
-        //    {
-        //        player.SoundLocation = audioFilePath;
-        //        player.Load();
-        //        player.Play();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Помилка: " + ex.Message);
-        //    }
-        //}
-
-        //string audioFilePath = ".wav";
-
+        public void StopMusic()
+        {
+            soundPlayer.Stop();
+        }
 
         #endregion
 

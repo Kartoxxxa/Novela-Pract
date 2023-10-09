@@ -61,11 +61,12 @@ namespace Pract_1.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Ivan1 {
+        internal static byte[] Mass {
             get {
-                return ResourceManager.GetStream("Ivan1", resourceCulture);
+                object obj = ResourceManager.GetObject("Mass", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -156,15 +157,6 @@ namespace Pract_1.Properties {
             get {
                 object obj = ResourceManager.GetObject("Деревня_люди_костёр", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Диктор {
-            get {
-                return ResourceManager.GetStream("Диктор", resourceCulture);
             }
         }
         

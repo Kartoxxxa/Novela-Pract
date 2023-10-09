@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Compression;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,23 +14,48 @@ namespace Pract_1.Components
 {
     public partial class Menu : UserControl
     {
-        public Menu()
-        {
-            InitializeComponent();
-        }
-
+        private SoundPlayer soundPlayer;
         public event EventHandler StartClicked;
         public event EventHandler ExitClicked;
 
+        public Menu()
+        {
+            InitializeComponent();
+            soundPlayer = new SoundPlayer();
+        }
+
+        #region Music
+        public void MusicFromResource()
+        {
+            using (MemoryStream fileOut = new MemoryStream(Properties.Resources.Mass))
+            using (GZipStream gz = new GZipStream(fileOut, CompressionMode.Decompress))
+            {
+                soundPlayer.Stream = gz;
+                soundPlayer.Load();
+                soundPlayer.Play();
+            }
+        }
+
+        public void StopMusic()
+        {
+                soundPlayer.Stop();
+        }
+
+        #endregion
+
+
+        #region Button
+
         public void startButton_Click(object sender, EventArgs e)
         {
-            // При нажатии кнопки "Старт", вызываем событие StartClicked
+            StopMusic();
             StartClicked?.Invoke(this, EventArgs.Empty);
+
         }
 
         public void exitButton_Click(object sender, EventArgs e)
         {
-            // При нажатии кнопки "Выйти", вызываем событие ExitClicked
+            StopMusic();
             ExitClicked?.Invoke(this, EventArgs.Empty);
         }
 
@@ -41,11 +68,26 @@ namespace Pract_1.Components
 
         }
 
+        #endregion
 
-
-        private void Menu_Load(object sender, EventArgs e)
+        public string TextButtonStart
         {
+            get
+            {
+                return btn1.Text;
+            }
+            set
+            {
+                btn1.Text = value;
+            }
+        }
 
+
+        #region select
+
+        private async void Menu_Load(object sender, EventArgs e)
+        {
+            MusicFromResource();
             title.Font = new Font("Georgia", 36, FontStyle.Regular);
             title.ForeColor = Color.White;
             title.TextAlign = ContentAlignment.MiddleCenter;
@@ -85,5 +127,8 @@ namespace Pract_1.Components
             btn3.ForeColor = Color.DarkRed;
             btn3.BackColor = Color.Black;
         }
+
+        #endregion
+
     }
 }

@@ -15,39 +15,45 @@ namespace Pract_1
 
         int story = -1;
         int click;
-        SoundPlayer player;
+        
         bool isPlaying = false;
-
+        private SoundPlayer soundPlayer;
 
         public Nova()
         {
             InitializeComponent();
-            player = new SoundPlayer();
+            soundPlayer = new SoundPlayer(); ;
             GlobalMenu.StartClicked += MenuControl_StartClicked;
             GlobalMenu.ExitClicked += MenuControl_ExitClicked;
-            this.KeyPreview = true;
-            this.KeyDown += new KeyEventHandler(Form_Key);
-         
+
         }
 
         #endregion
 
         #region Button and Click
-
-        private void ClickBox(object sender, EventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (story == 8)
+            switch (keyData)
             {
-                return;
+                case Keys.Right:
+                    btnNext_Click(this, EventArgs.Empty);
+                    return true;
+                case Keys.Left:
+                    btnPrevious_Click(this, EventArgs.Empty);
+                    return true;
+                case Keys.Escape:
+                    if (story >= 2)
+                    {
+                        MusicFromResource();
+                        GlobalMenu.Visible = true;
+                        GlobalMenu.TextButtonStart = "Продолжить";
+                    }
+                    return true;
+                case Keys.Space:
+                    return true;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
             }
-            else if (story == 16)
-            {
-                return;
-            }
-            story++;
-            NeGlavStory();
-            TextAnimation(sender, e);
-
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -73,20 +79,6 @@ namespace Pract_1
             TextAnimation(sender, e);
             click = 0;
         }
-
-        private void Form_Key(object sender, KeyEventArgs e)
-        {            
-            if (e.KeyCode == Keys.Right)          
-            {               
-                btnNext_Click(sender, e); 
-            }
-            
-            else if (e.KeyCode == Keys.Left)
-            {                
-                btnPrevious_Click(sender, e); 
-            }
-        }
-
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -122,23 +114,43 @@ namespace Pract_1
             story--;
             NeGlavStory();
             TextAnimation(sender, e);
-        }        
+        }
 
-        private void MenuControl_StartClicked(object sender, EventArgs e)
+        private void ClickBox(object sender, EventArgs e)
         {
-            GlobalMenu.Visible = false;
-            story = 1;
-            TextAnimation(sender, e);
+            if (story == 8)
+            {
+                return;
+            }
+            else if (story == 16)
+            {
+                return;
+            }
+            story++;
             NeGlavStory();
+            TextAnimation(sender, e);
+        }
+
+            private void MenuControl_StartClicked(object sender, EventArgs e)
+        {
+            if (GlobalMenu.TextButtonStart == "Старт")
+            {
+                GlobalMenu.Visible = false;
+                story = 1;
+                TextAnimation(sender, e);
+                NeGlavStory();
+            }
+            else if (GlobalMenu.TextButtonStart == "Продолжить")
+            {
+                GlobalMenu.Visible = false;
+            }                       
         }
         private void MenuControl_ExitClicked(object sender, EventArgs e)
         {
             this.Close();
         }
 
-#endregion
-
-
+        #endregion
 
         #region Story Swich
 
@@ -147,6 +159,7 @@ namespace Pract_1
             switch (story)
             {
                 case 0:
+                    GlobalMenu.TextButtonStart = "Старт";
                     GlobalMenu.Visible = true;
                     break;
                 case 1:

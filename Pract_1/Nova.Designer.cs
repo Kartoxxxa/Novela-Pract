@@ -195,8 +195,9 @@
             GlobalMenu.BackgroundImageLayout = ImageLayout.Stretch;
             GlobalMenu.Location = new Point(0, 0);
             GlobalMenu.Name = "GlobalMenu";
-            GlobalMenu.Size = new Size(1008, 884);
+            GlobalMenu.Size = new Size(1008, 858);
             GlobalMenu.TabIndex = 4;
+            GlobalMenu.Visible = false;
             // 
             // Nova
             // 
